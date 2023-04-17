@@ -22,11 +22,18 @@
                 #Camera-div{
                     display: none;
                 }
+                #video{
+                    width:"640";
+                    height:"480";
+                }
+                #canvas{
+                    width:"640";
+                    height:"480";
+                }
             }
         </style>
     </header>
     <body>
-
         <div id="front-page" >
             <h1>Welcome to the Skanr Website</h1>
             <p>click the start button to start</p>
@@ -34,9 +41,9 @@
         </div>
 
         <div id="Camera-div">
-            <video id="video" width="640" height="480" autoplay></video>
+            <video id="video" autoplay></video>
             <button id="snap">Snap Photo</button>
-            <canvas id="canvas" width="640" height="480"></canvas>
+            <canvas id="canvas" ></canvas>
         </div>
         <script type="module" src="app.js"></script>
     </body>
