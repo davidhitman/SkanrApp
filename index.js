@@ -40,6 +40,9 @@ app.get("/collections/:collectionName", function (req, res, next) {
   });
 });
 
+var staticPath = path.join(__dirname, "image");
+app.use("/image", express.static(staticPath));
+
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
     console.log("App started on port: " + port);
