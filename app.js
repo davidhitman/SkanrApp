@@ -4,11 +4,11 @@ let app = new Vue({ // The Vue instance
          user:[],
          showUsers: true,
          search:'',
-         urls: "Firstapplication-env.eba-chfmnifa.eu-west-2.elasticbeanstalk.com",
+         urls: "firstApplication-env-1.eba-chfmnifa.eu-west-2.elasticbeanstalk.com ",
     },
 
     created: function () {
-        fetch("Firstapplication-env.eba-chfmnifa.eu-west-2.elasticbeanstalk.com/collections/Users")
+        fetch("firstApplication-env-1.eba-chfmnifa.eu-west-2.elasticbeanstalk.com/collections/Users")
           .then((response) => response.json())
           .then((user) => {
             this.user = user;
