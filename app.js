@@ -37,6 +37,7 @@ let App = new Vue({ // The Vue instance
         logIn(){
           let email = document.getElementById("inputEmail").value;
           let password = document.getElementById("inputPassword").value;
+            console.log(email);
           for(user in this.user){
             if(email==user.Email){
               if(password==user.Password){
