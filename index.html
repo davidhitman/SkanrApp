@@ -13,7 +13,7 @@
         <div v-if="login">
             <input id="inputEmail" type="text"  placeholder="Enter Your Email"><br>
             <input id="inputPassword" type="text"  placeholder="Enter Your Password"><br>
-            <button class="login-btn" v-onclick="logIn()">LogIn</button>
+            <button class="login-btn" v-on:click="logIn()">LogIn</button>
         </div> 
         <div  v-else> <!-- check if the User page should display or the basket page should display-->
             <div class="head"> <!--div with search input -->
