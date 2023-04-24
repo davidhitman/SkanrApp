@@ -54,9 +54,9 @@ app.get("/collections/:collectionName", function (req, res, next) {
 //   });
 // });
 
-// access tho the images on github (creating a diretory)
-// var staticPath = path.join(__dirname, "image");
-// app.use("/image", express.static(staticPath));
+access tho the images on github (creating a diretory)
+var staticPath = path.join(__dirname, "image");
+app.use("/image", express.static(staticPath));
 
 // port where serve is running
 const port = process.env.PORT || 3000;
