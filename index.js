@@ -27,10 +27,10 @@ app.use(cors());
 app.use(express.json()); 
 
 
-// app.param("collectionName", function (req, res, next, collectionName) {
-//   req.collection = db.collection(collectionName);
-//   return next();
-// });
+app.param("collectionName", function (req, res, next, collectionName) {
+  req.collection = db.collection(collectionName);
+  return next();
+});
 
 // collection of data from mongodb
 app.get("/collections/:collectionName", function (req, res, next) {
