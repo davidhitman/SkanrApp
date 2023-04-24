@@ -55,6 +55,7 @@ app.get("/collections/:collectionName/search/:query",function (req, res, next) {
         { name: { $regex: searchText, $options: "i" } },
       ],
     };
+    console.log(query);
     req.collection.find(query, {}).toArray(function (err, results) {
       if (err) {
         return next(err);
