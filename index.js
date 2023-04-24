@@ -45,16 +45,44 @@ app.get("/collections/:collectionName", function (req, res, next) {
 
 
 // // (posting a new user created )
-// app.post("/collections/:collectionName", function (req, res, next) {
+app.post("/collections/:collectionName", function (req, res, next) {
 
-//   // req.body.id = new ObjectId();
-//   req.collection.insertOne(req.body, function (err, results) {
-//     if (err) {
-//       return next(err);
-//     }
-//     res.send(results);
-//   });
-// });
+  // req.body.id = new ObjectId();
+  req.collection.insertOne(req.body, function (err, results) {
+    if (err) {
+      return next(err);
+    }
+    res.send(results);
+  });
+});
+
+
+app.get("/collections/:collectionName/search/:query",function (req, res, next) {
+    let searchText = req.params.query;
+    let query = {};
+    query = {
+      $or: [
+        { Event: { $regex: searchText, $options: "i" } },
+      ],
+    };
+    req.collection.find(query, {}).toArray(function (err, results) {
+      if (err) {
+        return next(err);
+      }
+      res.send(results);
+    });
+  }
+);
+app.get("/collections/:collectionName/search", function (req, res, next) {
+  req.collection.find({}).toArray(function (err, results) {
+    if (err) {
+      return next(err);
+    }
+    res.send(results);
+  });
+});
+
+
 
 //access tho the images on github (creating a diretory)
 var staticPath = path.join(__dirname, "image");
