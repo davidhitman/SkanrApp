@@ -90,8 +90,11 @@ app.post("/collections/:collectionName", function (req, res, next) {
 
 
 
- var staticPath = path.join(__dirname, "image");
-app.use("/image", express.static(staticPath));
+ //var staticPath = path.join(__dirname, "image");
+
+app.use("/image", express.static(path.join(__dirname, '/Users/david/Desktop/SkanrApp-main/image')));
+
+
 // console.log(__dirname);
 //var staticPath = path.join(__dirname, '../Users/david/Desktop/SkanrApp-main');
 //app.use("/image", express.static(staticPath));
