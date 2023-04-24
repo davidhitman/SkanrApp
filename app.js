@@ -22,7 +22,7 @@ let App = new Vue({ // The Vue instance
         
         async getUsers() {
         try {
-          const url = `${this.urls}/User/search/${this.searchText}`;
+          const url = `${this.urls}/collections/User/search/${this.searchText}`;
   
           const response = await fetch(url);
   
