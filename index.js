@@ -25,13 +25,12 @@ app.set("json spaces", 3);
 app.use(morgan("short"));
 app.use(cors());
 app.use(express.json()); 
-
 app.param("collectionName", function (req, res, next, collectionName) {
   req.collection = db.collection(collectionName);
   return next();
 });
 
-
+// collection of data from mongodb
 app.get("/collections/:collectionName", function (req, res, next) {
   req.collection.find({}).toArray(function (err, results) {
     if (err) {
@@ -44,7 +43,7 @@ app.get("/collections/:collectionName", function (req, res, next) {
 
 
 //////////////////////////////////////////////////////////////////////
-
+// search not working yet
 app.get("/collections/:collectionName/search/:query",function (req, res, next) {
     //const searchText = req.query.search;
     let searchText = req.params.query;
@@ -76,7 +75,7 @@ app.get("/collections/:collectionName/search", function (req, res, next) {
 
 //////////////////////////////////////////////////////////
 
-
+// (posting a new user created )
 app.post("/collections/:collectionName", function (req, res, next) {
 
   // req.body.id = new ObjectId();
@@ -88,11 +87,11 @@ app.post("/collections/:collectionName", function (req, res, next) {
   });
 });
 
-
+// access tho the images on github (creating a diretory)
 var staticPath = path.join(__dirname, "image");
 app.use("/image", express.static(staticPath));
 
-
+// port where serve is running
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
     console.log("App started on port: " + port);
