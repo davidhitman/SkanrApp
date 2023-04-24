@@ -74,18 +74,6 @@ app.get("/collections/:collectionName/search", function (req, res, next) {
   });
 });
 
-app.post("/collections/:collectionName", function (req, res, next) {
-  xyz = req.body;
-  // req.body.id = new ObjectId();
-  req.collection.insertOne(xyz, function (err, results) {
-    if (err) {
-      return next(err);
-    }
-    res.send(results);
-  });
-});
-
-
 
 //////////////////////////////////////////////////////////
 
