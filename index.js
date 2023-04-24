@@ -42,17 +42,17 @@ app.get("/collections/:collectionName", function (req, res, next) {
 
 
 
-// (posting a new user created )
-app.post("/collections/:collectionName", function (req, res, next) {
+// // (posting a new user created )
+// app.post("/collections/:collectionName", function (req, res, next) {
 
-  // req.body.id = new ObjectId();
-  req.collection.insertOne(req.body, function (err, results) {
-    if (err) {
-      return next(err);
-    }
-    res.send(results);
-  });
-});
+//   // req.body.id = new ObjectId();
+//   req.collection.insertOne(req.body, function (err, results) {
+//     if (err) {
+//       return next(err);
+//     }
+//     res.send(results);
+//   });
+// });
 
 // access tho the images on github (creating a diretory)
 var staticPath = path.join(__dirname, "image");
