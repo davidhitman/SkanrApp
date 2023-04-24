@@ -90,14 +90,14 @@ app.post("/collections/:collectionName", function (req, res, next) {
 
 
 
- var staticPath = path.join(__dirname, "image");
+ //var staticPath = path.join(__dirname, "image");
 
-//app.use("/image", express.static(path.join(__dirname, '/Users/david/Desktop/SkanrApp-main/image')));
+app.use("/image", express.static(path.join(__dirname, '/Users/david/Desktop/SkanrApp-main/image')));
 
 
 // console.log(__dirname);
 //var staticPath = path.join(__dirname, '../Users/david/Desktop/SkanrApp-main');
-app.use("/image", express.static(staticPath));
+//app.use("/image", express.static(staticPath));
 //app.use("http://localhost/Users/david/Desktop/SkanrApp-main/image/pic1.webp");
 
 const port = process.env.PORT || 3000;
