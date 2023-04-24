@@ -56,13 +56,13 @@ app.get("/collections/:collectionName/search/:query",function (req, res, next) {
       ],
     };
   console.log(query);
-//     req.collection.find(query, {}).toArray(function (err, results) {
-//       if (err) {
-//         return next(err);
-//       }
-//       res.send(results);
-//     });
-//   }
+    req.collection.find(query, {}).toArray(function (err, results) {
+      if (err) {
+        return next(err);
+      }
+      res.send(results);
+    });
+  }
 );
 // app.get("/collections/:collectionName/search", function (req, res, next) {
 //   req.collection.find({}).toArray(function (err, results) {
