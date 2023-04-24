@@ -54,7 +54,7 @@ app.get("/collections/:collectionName", function (req, res, next) {
 //   });
 // });
 
-access tho the images on github (creating a diretory)
+//access tho the images on github (creating a diretory)
 var staticPath = path.join(__dirname, "image");
 app.use("/image", express.static(staticPath));
 
