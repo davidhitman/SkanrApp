@@ -20,17 +20,17 @@ let App = new Vue({ // The Vue instance
     methods:{ // methods to be used
         
         
-        async getUsers() {
-        try {
-          const url = `${this.urls}/collections/User/search/${this.searchText}`;
+//         async getUsers() {
+//         try {
+//           const url = `${this.urls}/collections/User/search/${this.searchText}`;
   
-          const response = await fetch(url);
+//           const response = await fetch(url);
   
-          this.user = await response.json();
-        } catch (error) {
-          this.error = error;
-        }
-      },
+//           this.user = await response.json();
+//         } catch (error) {
+//           this.error = error;
+//         }
+//       },
           
 //         getUsers() {
 //           const url = `${this.urls}/collections/User`;
@@ -63,21 +63,8 @@ let App = new Vue({ // The Vue instance
             }
           }
         }
-    },
-    computed:{
-      searchLesson () { // function searching for the lesson
-        tempUsers = this.user;
-
-        if (this.search != '' && this.search) {
-            tempUsers = tempUserss.filter((item) => {
-                return item.Event.toUpperCase().includes(this.search.toUpperCase()) 
-                //item.Location.toUpperCase().includes(this.search.toUpperCase())
-            })
-        
-        }
-        return tempUsers
-      }
-    }
+    };
+    
 
 })
 
