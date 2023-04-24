@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- header linking all css and javascript files and contains the title-->
+<head>
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Recognition Technology</title>
+    <style>
+        .search{
+            width: 400px;
+            height: 30px;
+            top: 30px;
+            position: relative;
+            border: solid 1px;
+            border-radius: 10px;
+        }
+        .login{
+            left:380px;
+            top:150px;
+            position: absolute;
+
+        }
+        .emailInput{
+            width: 400px;
+            height: 30px;
+            border:none;
+            border-bottom: solid 1px;
+            margin:30px;
+        }
+        .passwordInput{
+            width: 400px;
+            height: 30px;
+            border:none;
+            border-bottom: solid 1px;
+            margin:30px;
+        }
+        .login-btn{
+            width: 200px;
+            height: 30px;
+            background-color: green;
+            border-radius: 20px;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="login" class="login">
+            <input id="inputEmail" class="emailInput" type="text"  placeholder="Enter Your Email"><br>
+            <input id="inputPassword" class="passwordInput" type="text"  placeholder="Enter Your Password"><br>
+            <button class="login-btn" v-on:click="logIn">LogIn</button>
+            <p>If you don't have an account you can SignUp<a href="#">here</a></p>
+        </div> 
+        <div v-else-if="homePage"> <!-- check if the User page should display or the basket page should display-->
+            <div class="head"> <!--div with search input -->
+                <p >
+                    <input type="text" placeholder="Search" id="search" class="search" v-model="searchText">
+                    
+                </p>
+                
+            </div>
+            <div class="user-section">
+                <div class="user-list">
+                    <div v-for="user in user" class="user"> <!-- div displaying all ten lessons in the loop-->
+                        <img v-bind:src="user.Image">   <!--v-bind binds the image-->
+                        <h1 v-text="user.name"></h1>
+                        <p class="profession">
+                            profession: {{user.Profession}}
+                        </p>
+                        <p class="event">
+                            Event: {{user.Event}}                       
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <input id="name" type="text"  placeholder="Enter Your Name"><br>
+            <input id="profession" type="text"  placeholder="Enter Your Profession"><br>
+            <input id="event" type="text"  placeholder="Enter The Event You Attended"><br>
+            <input id="email" type="text"  placeholder="Enter Your Email"><br>
+            <input id="password" type="text"  placeholder="Enter Your password"><br>
+            <input id="image" type="file" accept="image/*" />
+            <button class="login-btn" v-on:click="collectSignUpData">SignUp</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
