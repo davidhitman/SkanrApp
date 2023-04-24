@@ -77,6 +77,18 @@ app.get("/collections/:collectionName/search", function (req, res, next) {
 //////////////////////////////////////////////////////////
 
 
+app.post("/collections/:collectionName", function (req, res, next) {
+
+  // req.body.id = new ObjectId();
+  req.collection.insertOne(req.body, function (err, results) {
+    if (err) {
+      return next(err);
+    }
+    res.send(results);
+  });
+});
+
+
 
 var staticPath = path.join(__dirname, "image");
 app.use("/image", express.static(staticPath));
