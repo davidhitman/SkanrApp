@@ -93,8 +93,9 @@ app.post("/collections/:collectionName", function (req, res, next) {
 // var staticPath = path.join(__dirname, "image");
 // app.use("/image", express.static(staticPath));
 // console.log(__dirname);
-var staticPath = path.join(__dirname, '../Users/david/Desktop/SkanrApp-main');
-app.use("/image", express.static(staticPath));
+//var staticPath = path.join(__dirname, '../Users/david/Desktop/SkanrApp-main');
+//app.use("/image", express.static(staticPath));
+app.use("http://localhost/Users/david/Desktop/SkanrApp-main/image/pic1.webp");
 
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
