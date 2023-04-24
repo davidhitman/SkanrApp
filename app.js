@@ -18,22 +18,36 @@ let App = new Vue({ // The Vue instance
         return;
     },
     methods:{ // methods to be used
-        getUsers() {
-          const url = `${this.urls}/collections/User`;
-          fetch(url)
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-              }
-              return response.json();
-            })
-            .then((user) => {
-              this.user = user;
-            })
-            .catch((Error) => {
-              console.log("Error", Error);
-            });
-        },
+        
+        
+        async getUsers() {
+        try {
+          const url = `${this.urls}/User/search/${this.searchText}`;
+  
+          const response = await fetch(url);
+  
+          this.user = await response.json();
+        } catch (error) {
+          this.error = error;
+        }
+      },
+          
+//         getUsers() {
+//           const url = `${this.urls}/collections/User`;
+//           fetch(url)
+//             .then((response) => {
+//               if (!response.ok) {
+//                 throw new Error(`HTTP error! status: ${response.status}`);
+//               }
+//               return response.json();
+//             })
+//             .then((user) => {
+//               this.user = user;
+//             })
+//             .catch((Error) => {
+//               console.log("Error", Error);
+//             });
+//         },
         logIn(){
           a = true;
           let email = document.getElementById("inputEmail").value;
