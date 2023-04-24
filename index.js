@@ -55,11 +55,11 @@ app.get("/collections/:collectionName", function (req, res, next) {
 // });
 
 // access tho the images on github (creating a diretory)
-var staticPath = path.join(__dirname, "image");
-app.use("/image", express.static(staticPath));
+// var staticPath = path.join(__dirname, "image");
+// app.use("/image", express.static(staticPath));
 
-// port where serve is running
-const port = process.env.PORT || 3000;
-app.listen(port, function() {
-    console.log("App started on port: " + port);
-});
+// // port where serve is running
+// const port = process.env.PORT || 3000;
+// app.listen(port, function() {
+//     console.log("App started on port: " + port);
+// });
