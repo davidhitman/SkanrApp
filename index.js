@@ -54,7 +54,7 @@ app.get(
     let query = {};
     query = {
       $or: [
-        { name: { $regex: searchText, $options: "i" } },
+        { name: { $regex: searchText } },
       ],
     };
     req.collection.find(query, {}).toArray(function (err, results) {
