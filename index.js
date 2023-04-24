@@ -26,10 +26,10 @@ app.use(morgan("short"));
 app.use(cors());
 app.use(express.json()); 
 
-// app.param("collectionName", function (req, res, next, collectionName) {
-//   req.collection = db.collection(collectionName);
-//   return next();
-// });
+app.param("collectionName", function (req, res, next, collectionName) {
+  req.collection = db.collection(collectionName);
+  return next();
+});
 
 
 // app.get("/collections/:collectionName", function (req, res, next) {
