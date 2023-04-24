@@ -25,20 +25,22 @@ app.set("json spaces", 3);
 app.use(morgan("short"));
 app.use(cors());
 app.use(express.json()); 
+
+
 app.param("collectionName", function (req, res, next, collectionName) {
   req.collection = db.collection(collectionName);
   return next();
 });
 
 // collection of data from mongodb
-app.get("/collections/:collectionName", function (req, res, next) {
-  req.collection.find({}).toArray(function (err, results) {
-    if (err) {
-      return next(err);
-    }
-    res.send(results);
-  });
-});
+// app.get("/collections/:collectionName", function (req, res, next) {
+//   req.collection.find({}).toArray(function (err, results) {
+//     if (err) {
+//       return next(err);
+//     }
+//     res.send(results);
+//   });
+// });
 
 
 
