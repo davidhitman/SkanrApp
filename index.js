@@ -65,14 +65,14 @@ app.get(
     });
   }
 );
-app.get("/collections/:collectionName/search", function (req, res, next) {
-  req.collection.find({}).toArray(function (err, results) {
-    if (err) {
-      return next(err);
-    }
-    res.send(results);
-  });
-});
+// app.get("/collections/:collectionName/search", function (req, res, next) {
+//   req.collection.find({}).toArray(function (err, results) {
+//     if (err) {
+//       return next(err);
+//     }
+//     res.send(results);
+//   });
+// });
 
 
 //////////////////////////////////////////////////////////
