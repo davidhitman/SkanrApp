@@ -44,7 +44,7 @@ app.get("/collections/:collectionName", function (req, res, next) {
 
 //////////////////////////////////////////////////////////////////////
 // search not working yet
-app.get("/collections/:collectionName/search/:query",function (req, res, next) {
+app.get("/collections/:collectionName/:query",function (req, res, next) {
     //const searchText = req.query.search;
     let searchText = req.params.query;
 
@@ -63,7 +63,7 @@ app.get("/collections/:collectionName/search/:query",function (req, res, next) {
     });
   }
 );
-app.get("/collections/:collectionName/search", function (req, res, next) {
+app.get("/collections/:collectionName", function (req, res, next) {
   req.collection.find({}).toArray(function (err, results) {
     if (err) {
       return next(err);
