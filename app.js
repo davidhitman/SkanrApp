@@ -49,6 +49,20 @@ let App = new Vue({ // The Vue instance
             }
           }
         }
+    },
+    computed:{
+      searchLesson () { // function searching for the lesson
+        tempUsers = this.user;
+
+        if (this.search != '' && this.search) {
+            tempUsers = tempUserss.filter((item) => {
+                return item.Event.toUpperCase().includes(this.search.toUpperCase()) 
+                //item.Location.toUpperCase().includes(this.search.toUpperCase())
+            })
+        
+        }
+        return tempUsers
+      }
     }
 
 })

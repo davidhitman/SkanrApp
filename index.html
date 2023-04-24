@@ -18,7 +18,8 @@
         <div v-else> <!-- check if the User page should display or the basket page should display-->
             <div class="head"> <!--div with search input -->
                 <p >
-                    <input class="search" type="text"  placeholder="Search Users">
+                    
+                    <input class="search" type="text" v-model="search" placeholder="Search Users">
                     <button class="btn-search"  value="Submit" v-on:click="search">Search</button>
                 </p>
             </div>
