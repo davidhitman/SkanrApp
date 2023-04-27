@@ -63,7 +63,7 @@ app.get("/collections/:collectionName/search/:query",function (req, res, next) {
     query = {
       $or: [
         { Event: { $regex: searchText, $options: "i" } },
-        { Profession: { $regex: searchText, $options: "i" } },
+        { Profession: { $regex: searchText, $options: "i" } }
       ],
     };
     req.collection.find(query, {}).toArray(function (err, results) {
